@@ -4,10 +4,10 @@ trigger:
       - main
 
 pool:
-  name: 'Docker-App'
+  name: 'agent'
 
 variables:
-  imageName: 'mirzzie/docker-app'
+  imageName: 'arya7128/docker-image'
   containerName: 'sampleapp'
   DeployUser: $(user)
   DeployServerIP: $(ip)
@@ -42,7 +42,7 @@ stages:
         steps:
           - task: DownloadSecureFile@1
             inputs:
-              secureFile: 'KEY.pem'  # Name of your uploaded secure file
+              secureFile: 'Key.pem'  # Name of your uploaded secure file
             name: privateKey
 
           - script: |
